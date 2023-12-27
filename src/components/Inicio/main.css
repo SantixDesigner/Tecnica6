@@ -1,0 +1,210 @@
+main{
+    overflow: hidden;
+}
+/************************************************************************************Historia*********************************************************************************************/
+.container-historia {
+    margin-top: 10px;
+    overflow-x: hidden;
+}
+.container-historia h2 {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.container-historia .col-lg-7 {
+    text-align: end;
+}
+
+.container-historia .col-lg-7 img {
+    width: 100%;
+    transition: 1s;
+}
+.container-historia .col-lg-5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.container-historia .col-lg-5 h2{
+    font-size: 50px;
+}
+@media(max-width:1024px) {
+    .container-historia {
+        margin-bottom: 40px;
+    }
+
+    .container-historia .col-lg-5 h2 {
+        text-align: center;
+    }
+
+    .container-historia .col-lg-5 p {
+        text-align: center;
+    }
+
+    .container-historia .col-lg-5 {
+        text-align: center;
+    }
+}
+
+/*************************************************************************************Planes de estudio & parte de preinscripcion***********************************************************************************/
+.planes-de-estudio{
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+.plan-estudio{
+    background-color: #00152b;
+    color: white;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 36px;
+    margin: 0 auto;
+}
+.plan-estudio::after, .plan-estudio::before{
+    content: '';
+    position: absolute;
+    max-width: 500px;
+    width: 100%;
+    height: 3px;
+    background-color: #00152b;
+    top: 0.85em;
+}
+.plan-estudio::before{
+    left: -390px;
+}
+.plan-estudio::after{
+    right: -390px;
+}
+.tarjeta-plan{
+    background-color: #00152b;
+    margin: 10px auto;
+    border-radius: 20px;
+    max-width: 300px;
+    padding: 10px;
+}
+.tarjeta-plan a{
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.tarjeta-plan p{
+    margin-top: 10px;
+    color: rgb(112, 112, 112);
+    font-size: 20px;
+}
+.planes-de-estudio .row .informacion{
+    font-size: 25px;
+    margin: 20px 0;
+}
+.amigosPlanEstudio{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.amigosPlanEstudio{
+    order: 2;
+}
+/************************************************************************************Niveles**********************************************************************************************/
+
+.div-principal-Niveles {
+    margin-top: 20px;
+}
+.div-principal-Niveles h2,h3{
+    font-weight: 400;
+}
+.div-principal-Niveles .niveles-niveles{
+    margin: 40px 0;
+}
+.div-principal-Niveles .niveles-niveles h2{
+    width: 100%;
+    background-color: #00152b;
+    color: white;
+    max-width: 400px;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 36px;
+    margin: 0 auto;
+}
+.div-principal-Niveles .niveles-niveles h2::before, .div-principal-Niveles .niveles-niveles h2::after{
+    content: '';
+    position: absolute;
+    max-width: 500px;
+    width: 100%;
+    height: 3px;
+    background-color: #00152b;
+    top: 0.85em;
+}
+.div-principal-Niveles .niveles-niveles h2::before{
+    left: -380px;
+}
+.div-principal-Niveles .niveles-niveles h2::after{
+    right: -380px;
+}
+.div-principal-Niveles h3{
+    margin-top: 15px;
+}
+.imagenTarjeta {
+    width: 75%;
+    border-radius: 20px;
+}
+.una {
+    transition: 1s;
+}
+.una:hover{
+    width: 80%;
+}
+.niveles-container {
+    margin-top: 20px;
+}
+
+.niveles-container div p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+
+}
+
+/**************************************preinscripción******************************************/
+.preinscripcion-interno{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    order: 1;
+}
+.preinscripcion-interno img{
+    width: 100%;
+    max-width: 600px;
+}
+.preinscripcion-interno .preinscrip-text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+.preinscripcion-interno .preinscrip-text p{
+    width: 100%;
+    max-width: 800px;
+}
+.preinscripcion-interno .preinscrip-text p span{
+    font-weight: bold;
+}
+.preinscripcion-interno .preinscrip-text a{
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+    background-color: #BAB4C0;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 24px;
+}
+@media(max-width:1000px){
+    .preinscripcion-interno{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,39 @@
+.mapa-tecnica {
+    display: flex;
+    margin: 0 auto;
+}
+
+.seccion-contacto {
+    margin-top: 10px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.seccion-contacto .contacto-facebook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.seccion-contacto .contacto-facebook p:last-of-type {
+    font-size: 24px;
+}
+
+.seccion-contacto .contacto-facebook p:last-of-type a i {
+    font-size: 24px;
+}
+
+.w-100 {
+    max-width: 75%;
+}
+
+.footer {
+    max-width: 100%;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}

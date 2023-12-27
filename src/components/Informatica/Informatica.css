@@ -1,0 +1,33 @@
+tr td{
+    margin: 10px;
+    font-size: 16px;
+}
+tr th{
+    font-style: normal;
+    font-weight: bold;
+}
+td{
+    list-style: circle;
+    border: solid black 1px;
+}
+th{
+    border: solid black 1px;
+    font-weight: 400;
+}
+table{
+    overflow-x: scroll;
+    margin: 10px;
+    width: 1000px;
+    text-align: center;
+}
+.container-informatica{
+    overflow-x:scroll;
+}
+.display-cel{
+    display: none;
+}
+@media(max-width:1000px){
+    .display-cel{
+        display: block;
+    }
+}
