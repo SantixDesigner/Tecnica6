@@ -35,7 +35,7 @@ const Preinscripcion = () => {
         }
 
         try {
-            const response = await fetch('https://backprueba-lzgdib5ae-santixdesigner.vercel.app/form', {
+            const response = await fetch('https://backprueba-aj4ghzjsn-santixdesigner.vercel.app/form', {
                 method: 'POST',
                 body: formData,  // No necesitas JSON.stringify() aquí
             });
