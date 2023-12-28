@@ -2,7 +2,12 @@ import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
 import './Form.css'
 import { FormEvent, useState } from "react"
 const Preinscripcion = () => {
-    window.scrollTo(0, 0)
+    const [scroll, setScroll] = useState(false)
+    if(!scroll){
+        console.log(scroll)
+        window.scrollTo(0, 0)
+        setScroll(true)
+    }
     const [name, setName] = useState('')
     const [doc, setDoc] = useState('')
     const [mensaje, setMensaje] = useState('')
