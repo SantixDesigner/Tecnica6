@@ -29,23 +29,8 @@ body {
 .active{
     position: absolute;
 }
-.index-0{
-    background-image: url('./assets/entrada.jpg');
-}
-.index-1{
-    background-image: url('./assets/básico.jpg');
-}
-.index-2{
-    background-image: url('./assets/superior.jpg');
-}
-.index-3{
-    background-image: url('./assets/talleres.jpg');
-}
-.index-4{
-    background-image: url('./assets/trofeos.jpg');
-}
 .border-inner{
-    background-image: url('./assets/borde.jpg');
+    background-image: url("./assets/borde.jpg");
     height: 800px;
     position: absolute;
     width: 100%;
