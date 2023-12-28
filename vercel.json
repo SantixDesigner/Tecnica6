@@ -1,20 +1,19 @@
 {
     "build": {
         "env": {
-            "NODE_ENV": "development"
+          "NODE_ENV": "development"
         }
-    },
-    "routes": [
+      },
+      "routes": [
         {
-            "source": "/(.*)",
             "destination": "/",
             "src": "/(.*)",
             "status": 200,
-            "headers": {
+            "headers":{
                 "Strict-Transport-Security": "max-age=0",
                 "Content-Security-Policy": "upgrade-insecure-requests"
             },
-            "continue": true
+            "continue":true
         }
-    ]
-}
+      ]
+  }
