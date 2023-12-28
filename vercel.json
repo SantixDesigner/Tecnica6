@@ -6,5 +6,16 @@
         "env": {
           "NODE_ENV": "development"
         }
-      }
+      },
+      "routes": [
+        {
+            "src": "/(.*)",
+            "status": 200,
+            "headers":{
+                "Strict-Transport-Security": "max-age=0",
+                "Content-Security-Policy": "upgrade-insecure-requests"
+            },
+            "continue":true
+        }
+      ]
   }
