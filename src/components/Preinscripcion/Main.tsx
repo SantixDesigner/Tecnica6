@@ -35,7 +35,7 @@ const Preinscripcion = () => {
         }
 
         try {
-            const response = await fetch('http://190.17.149.162:8080/form', {
+            const response = await fetch('https://190.17.149.162:8080/form', {
                 method: 'POST',
                 body: formData,  // No necesitas JSON.stringify() aquí
             });
