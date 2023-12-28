@@ -37,7 +37,7 @@ const HeaderMain = () => {
                         </div>
                         <div className="item index-4">
                         </div>
-                        <div className="border-inner">
+                        <div className="border-inner" style={{backgroundImage: `url('../assets/borde.jpg')`}}>
                             <FontAwesomeIcon icon={faBars} size="3x" className="bars" onClick={() => setMenuOpen((prevMenu) => !prevMenu)}/>
                             <nav className={`nav menu ${menuOpen && "open"}`}>
                                 <Link to={'/'}><img src="./assets/tecnica-img.png" className={`logo-tecnica ${menuOpen && "borrar"}`} /></Link>
