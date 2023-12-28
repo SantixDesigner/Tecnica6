@@ -1,14 +1,13 @@
-import HeaderMain from "../Header/HeaderMain"
 import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
 import './Form.css'
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 const Preinscripcion = () => {
     window.scrollTo(0, 0)
     const [name, setName] = useState('')
     const [doc, setDoc] = useState('')
     const [mensaje, setMensaje] = useState('')
     const [email, setEmail] = useState('')
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
         const formData = new FormData();
@@ -17,8 +16,18 @@ const Preinscripcion = () => {
         formData.append('doc', doc);
         formData.append('mensaje', mensaje);
         const fileInput = document.querySelector('input[type="file"]');
-        formData.append('pdf', fileInput.files[0]);
-        console.log(formData.get('pdf'))
+
+        if (fileInput && fileInput instanceof HTMLInputElement) {
+            const selectedFile = fileInput.files?.[0]; // Utilizando el operador de encadenamiento opcional
+            if (selectedFile) {
+                formData.append('pdf', selectedFile);
+                console.log(formData.get('pdf'));
+            } else {
+                console.error('No se seleccionó ningún archivo');
+            }
+        } else {
+            console.error('Input de archivo no encontrado');
+        }
 
         try {
             const response = await fetch('http://190.17.149.162:8080/form', {
@@ -55,7 +64,7 @@ const Preinscripcion = () => {
                         <p>Documento, parte de adelante y atrás (en pdf o documento)</p>
                         <input type="file" name="pdf" />
                         <div>
-                            <button onClick={handleSubmit} style={{display: "flex", justifyContent: "center"}}>Enviar!</button>
+                            <button onClick={handleSubmit} style={{ display: "flex", justifyContent: "center" }}>Enviar!</button>
                         </div>
                         <p>Recordatorio: <span className="negrita">La preinscripción</span> no solo <span className="negrita">no asegura
                             una vacante</span>, si no que <span className="negrita">quedará en lista de espera.</span> Por eso
