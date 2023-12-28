@@ -16,7 +16,7 @@ const HeaderAlt: React.FC<HeaderAlt> = ({ assets, textH2 }) => {
                     <div className="border-carousel">
                         <div className="item active inscripcion" style={{ backgroundImage: `url(${assets})`}}>
                         </div>
-                        <div className="border-inner inscripcion">
+                        <div className="border-inner inscripcion" style={{backgroundImage: `url("../assets/borde.jpg")`}}>
                             <FontAwesomeIcon icon={faBars} size="3x" className="bars" onClick={() => setMenuOpen((prevMenu) => !prevMenu)} />
                             <nav className={`nav menu ${menuOpen && "open"}`}>
                                 <Link to={'/'}><img src="./assets/tecnica-img.png" className={`logo-tecnica ${menuOpen && "borrar"}`} /></Link>
