@@ -27,15 +27,15 @@ const HeaderMain = () => {
             <header className="header">
                 <div className="carousel">
                     <div className="border-carousel">
-                        <div className="item index-0 active ">
+                        <div className="item index-0 active" style={{backgroundImage: 'url("./assets/entrada.jpg")'}}>
                         </div>
-                        <div className="item index-1">
+                        <div className="item index-1" style={{backgroundImage: 'url("./assets/básico.jpg")'}}>
                         </div>
-                        <div className="item index-2">
+                        <div className="item index-2" style={{backgroundImage: 'url("./assets/superior.jpg")'}}>
                         </div>
-                        <div className="item index-3">
+                        <div className="item index-3" style={{backgroundImage: 'url("./assets/talleres.jpg")'}}>
                         </div>
-                        <div className="item index-4">
+                        <div className="item index-4" style={{backgroundImage: 'url("./assets/trofeos.jpg")'}}>
                         </div>
                         <div className="border-inner" style={{backgroundImage: `url("../assets/borde.jpg")`}}>
                             <FontAwesomeIcon icon={faBars} size="3x" className="bars" onClick={() => setMenuOpen((prevMenu) => !prevMenu)}/>
