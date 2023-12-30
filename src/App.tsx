@@ -8,6 +8,7 @@ import Preinscripcion from './components/Preinscripcion/Main.tsx'
 import Informatica from './components/Informatica/Infomatica.tsx';
 import Electronica from './components/Electronica/Electronica.tsx';
 import CicloBasico from './components/CicloBasico/CicloBasico.tsx';
+import Galeria from './components/Galeria/Galeria.tsx';
 AOS.init()
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/informatica' element={<Informatica />} />
           <Route path='/electronica' element={<Electronica />} />
           <Route path='/ciclobasico' element={<CicloBasico />} />
+          <Route path='/galeria' element={<Galeria />} />
         </Routes>
         <Footer />
       </BrowserRouter>

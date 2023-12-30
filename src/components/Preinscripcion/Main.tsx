@@ -35,12 +35,14 @@ const Preinscripcion = () => {
         }
 
         try {
-            const response = await fetch('https://backprueba-ochre.vercel.app/form', {
+            const response = await fetch('https://backprueba-nine.vercel.app/form', {
                 method: 'POST',
                 body: formData,  // No necesitas JSON.stringify() aqu
             });
-            console.log(response)
+
             if (response.ok) {
+                const responseData = await response.json();
+                console.log(responseData);
                 console.log('Formulario enviado con éxito');
             } else {
                 console.error('Error al enviar el formulario');

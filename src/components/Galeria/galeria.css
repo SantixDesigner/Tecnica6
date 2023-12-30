@@ -1,0 +1,26 @@
+.imagen:hover{
+    width: calc(100% + 20px);
+}
+
+.imagen{
+    width: 100%;
+    transition: 1s;
+}
+
+.objectAbsolute{
+    display: flex;
+    align-items: center;
+    all: 0;
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    left: 0;
+    bottom: 0;
+
+}
+
+.objectAbsolute div img{
+    width: 80%;
+}
