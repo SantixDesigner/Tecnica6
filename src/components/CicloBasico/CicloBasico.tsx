@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
 import '../Informatica/Informatica.css'
 const CicloBasico = () => {
@@ -8,6 +8,9 @@ const CicloBasico = () => {
         window.scrollTo(0, 0)
         setScroll(true)
     }
+    useEffect(() => {
+        document.title = 'Técnica 6 - Ciclo Básico'
+    },[])
     return (
         <>
             <HeaderAlt assets="../assets/carpinteria3.jpg" textH2="CICLO BÁSICO" />

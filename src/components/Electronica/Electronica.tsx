@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderAlt from "../HeaderAlternativo/HeaderAlt";
 import '../Informatica/Informatica.css'
 const Electronica = () => {
@@ -7,6 +7,9 @@ const Electronica = () => {
         window.scrollTo(0, 0)
         setScroll(true)
     }
+    useEffect(() => {
+        document.title = 'Técnica 6 - Electrónica'
+    },[])
     return (
         <>
             <HeaderAlt assets="../assets/electro.png" textH2="ELECTRÓNICA" />
@@ -108,7 +111,7 @@ const Electronica = () => {
                         <tr>
                             <td></td>
                             <td>Diseño Asistido y Simulación Electrónica</td>
-                            <td>Lenguajes ELectrónicos</td>
+                            <td>Lenguajes Electrónicos</td>
                             <td></td>
                         </tr>
                         <tr>

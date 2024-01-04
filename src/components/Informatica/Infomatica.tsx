@@ -1,5 +1,5 @@
 import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './Informatica.css'
 
 const Informatica = () => {
@@ -8,6 +8,9 @@ const Informatica = () => {
         window.scrollTo(0, 0)
         setScroll(true)
     }
+    useEffect(() => {
+        document.title = 'Técnica 6 - Informática'
+    },[])
     return (
         <>
             <HeaderAlt assets="../assets/pc.jpg" textH2="INFORMÁTICA" />

@@ -1,6 +1,6 @@
 import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
 import './Form.css'
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 const Preinscripcion = () => {
     const [scroll, setScroll] = useState(false)
     if(!scroll){
@@ -8,6 +8,9 @@ const Preinscripcion = () => {
         window.scrollTo(0, 0)
         setScroll(true)
     }
+    useEffect(() => {
+        document.title = 'Técnica 6 - Preinscripción'
+    },[])
     const [name, setName] = useState('')
     const [doc, setDoc] = useState('')
     const [mensaje, setMensaje] = useState('')
@@ -23,7 +26,7 @@ const Preinscripcion = () => {
         const fileInput = document.querySelector('input[type="file"]');
 
         if (fileInput && fileInput instanceof HTMLInputElement) {
-            const selectedFile = fileInput.files?.[0]; // Utilizando el operador de encadenamiento opcional
+            const selectedFile = fileInput.files?.[0]; 
             if (selectedFile) {
                 formData.append('pdf', selectedFile);
                 console.log(formData.get('pdf'));
@@ -37,7 +40,7 @@ const Preinscripcion = () => {
         try {
             const response = await fetch('https://backprueba-nine.vercel.app/form', {
                 method: 'POST',
-                body: formData,  // No necesitas JSON.stringify() aqu
+                body: formData,  
             });
 
             if (response.ok) {
