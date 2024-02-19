@@ -1,10 +1,10 @@
-import './main.css'
 import Historia from "./Historia/Historia"
 import PlanesDeEstudio from './PlanesDeEstudio/PlanesDeEstudio'
 import Niveles from './Niveles/Niveles'
 import Preinscripcion from './Preinscripcion/Preinscripcion'
 import HeaderMain from '../Header/HeaderMain'
 import { useEffect, useState } from 'react'
+import './main.css'
 const Inicio = () => {
     useEffect(() => {
         document.title = 'Técnica 6 - Inicio'

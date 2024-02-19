@@ -1,15 +1,12 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import './Header.css'
 import { useState, useEffect } from "react"
 const HeaderMain = () => {
-    
     const [activeIndex, setActiveIndex] = useState(0)
     const [menuOpen, setMenuOpen] = useState(false)
     const indices = 5
-    console.log(useParams())
     useEffect(() => {
         const cantIndexs = document.querySelectorAll('.item');
         const showItem = (index: number) => {

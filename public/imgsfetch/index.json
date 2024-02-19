@@ -1,14 +1,14 @@
 [
     {
-        "url": "./assets/carpinteria.jpg",
+        "url": "./assets/informtiac6.jpg",
         "id": 1
     },
     {
-        "url": "./assets/carpinteria2.jpg",
+        "url": "./assets/pasillo.jpg",
         "id": 2
     },
     {
-        "url": "./assets/carpinteria3.jpg",
+        "url": "./assets/informatica1.jpg",
         "id": 3
     },
     {
@@ -16,7 +16,27 @@
         "id": 4
     },
     {
-        "url": "./assets/info8.jpg",
+        "url": "./assets/taller.jpg",
         "id": 5
+    },
+    {
+        "url": "./assets/superior.jpg",
+        "id": 6
+    },
+    {
+        "url": "./assets/tecnica2001.jpg",
+        "id": 7
+    },
+    {
+        "url": "./assets/trofeos.jpg",
+        "id": 8
+    },
+    {
+        "url": "./assets/básico.jpg",
+        "id": 9
+    },
+    {
+        "url": "./assets/info10.jpg",
+        "id": 10
     }
 ]

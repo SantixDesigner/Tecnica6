@@ -1,81 +1,125 @@
-import { useEffect, useState } from "react"
-import { Col, Container, Row } from "react-bootstrap"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import HeaderAlt from "../HeaderAlternativo/HeaderAlt"
-import 'swiper/css';
-import { Pagination, Navigation } from 'swiper/modules';
-import Swal from "sweetalert2"
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'
-import './galeria.css'
+import { useEffect, useState } from "react";
+import HeaderAlt from "../HeaderAlternativo/HeaderAlt";
+import { Context } from "../../context/context-dark";
+import { useContext } from "react";
+import './galeria.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 interface Galeria {
-    url: string,
-    id: number
+  url: string;
+  id: number;
 }
 
 const Galeria = () => {
-    const [galeria, setGaleria] = useState<Galeria[]>([])
-    useEffect(() => {
-        const fetchZ = async () => {
-            const response = await fetch('./imgsfetch/index.json')
-            const data = await response.json()
-            setGaleria(data)
-        }
-        fetchZ()
-    }, [galeria])
+  /*
+     {
+          "url": "./assets/informtiac6.jpg",
+          "id": 1
+      },
+      {
+          "url": "./assets/pasillo.jpg",
+          "id": 2
+      },
+      {
+          "url": "./assets/informatica1.jpg",
+          "id": 3
+      },
+      {
+          "url": "./assets/info7.jpg",
+          "id": 4
+      },
+      {
+          "url": "./assets/taller.jpg",
+          "id": 5
+      },
+      {
+          "url": "./assets/superior.jpg",
+          "id": 6
+      },
+      {
+          "url": "./assets/tecnica2001.jpg",
+          "id": 7
+      },
+      {
+          "url": "./assets/trofeos.jpg",
+          "id": 8
+      },
+      {
+          "url": "./assets/básico.jpg",
+          "id": 9
+      },
+      {
+          "url": "./assets/info10.jpg",
+          "id": 10
+      }*/
+  const [galeria, setGaleria] = useState<Galeria[]>([]);
+  const { darkMode, setDarkMode } = useContext(Context);
+  const [activo, setActivo] = useState(0);
 
-    return (
-        <>
-            <HeaderAlt assets="./assets/trofeos.jpg" textH2="GALERIA" />
-            <Container className="mt-2">
-                <Row>
-                    {galeria.map(item => {
-                        return (<>
-                            <Col lg={4} className="my-2">
-                                <img src={item.url} alt="" className="imagen" onClick={() => {
-                                    Swal.fire({
-                                        html: `
-                                    <div class=swiper>
-                                     
-                                      <div class="swiper-wrapper">
-                                        <div class="swiper-slide">Slide 1</div>
-                                        <div class="swiper-slide">Slide 2</div>
-                                        <div class="swiper-slide">Slide 3</div>
-                                      </div>
-                                      <div class="swiper-pagination"></div>
-                                    
+  useEffect(() => {
+    const fetchZ = async () => {
+      const response = await fetch('./imgsfetch/index.json');
+      const data = await response.json();
+      setGaleria(data);
+    };
+    fetchZ();
+  }, []);
 
-                                      <div class="swiper-button-prev"></div>
-                                      <div class="swiper-button-next"></div>
-                                    
-                                      <div class="swiper-scrollbar"></div>
-                                    </div>`})
-                                }} />
-                            </Col>
-                        </>)
-                    })}
-                </Row>
-            </Container>
-            <Swiper
-                pagination={{
-                    type: 'fraction',
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-                initialSlide={2}
+  const handleImageClick = (id: number) => {
+    setActivo(id);
+    if (!document.getElementById('img-container')) {
+      const div_container = document.createElement('div');
+      div_container.id = 'img-container';
+      setDarkMode(true)
+    }
+  };
+
+  return (
+    <>
+      <HeaderAlt assets="./assets/trofeos.jpg" textH2="GALERIA" />
+      <div className="suparcontainerGrid">
+        <div className="grid-container">
+          {galeria.map(item => (
+            <div
+              className={`${item.id === 5 ? "grid-item grid-item5" : "grid-item"} ${item.id === 10 ? "grid-item10" : ""}`}
+              key={item.id}
+              onClick={() => handleImageClick(item.id)}
             >
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="./assets/trofeos.jpg" alt="" /></SwiperSlide>
-            </Swiper>
-
+              <img src={item.url} alt="" />
+            </div>
+          ))}
+        </div>
+      </div>
+      {darkMode && (
+        <>
+          <div className="supercontainer" onClick={(e) => {
+            if ((e.target as Element).tagName === 'DIV') {
+              setDarkMode(false)
+            }
+          }}>
+            <div className="adelante" id="adelante" onClick={() => setActivo(activo + 1 < 11 ? activo + 1 : 10)}>
+              <FontAwesomeIcon icon={faArrowRight} size="4x" className={activo === 10 ? 'oscuro' : 'claro'} />
+            </div>
+            <div className="atras" id="atras" onClick={() => setActivo(activo - 1 === 0 ? 1 : activo - 1)}>
+              <FontAwesomeIcon icon={faArrowLeft} size="4x" className={activo === 1 ? 'oscuro' : 'claro'} />
+            </div>
+            <div className="img-container" id="img-container">
+              {galeria.map(item => (
+                <div
+                  key={item.id}
+                  className={`${activo === item.id ? 'img active transition' : 'transition'}`}
+                  style={{ transform: `translateX(-${(activo - 1) * 100}%)` }}
+                >
+                  <img src={item.url} alt="" />
+                </div>
+              ))}
+            </div>
+          </div>
         </>
-    )
-}
+      )}
+    </>
+  );
+};
 
-export default Galeria
+export default Galeria;
